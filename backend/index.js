@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(
   cors({
-    origin: "https://mern-book-collection-project-h7tg.vercel.app/",
+    origin: "https://mern-book-collection-project-h7tg.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeader: ["Content-Type"],
   })
