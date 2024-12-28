@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "https://mern-book-collection-project.vercel.app/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""), // Optional: rewrite paths
       },
