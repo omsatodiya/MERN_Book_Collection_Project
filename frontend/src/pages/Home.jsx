@@ -6,6 +6,7 @@ import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
 import { BsTable, BsGrid3X3Gap } from "react-icons/bs";
 import BooksTable from "../components/home/BooksTable";
 import BooksCard from "../components/home/BooksCard";
+import { BACKEND_URL } from "../../config";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -15,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("/api/books")
+      .get(`${BACKEND_URL}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);

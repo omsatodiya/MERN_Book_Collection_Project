@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import { format } from "date-fns";
+import { BACKEND_URL } from "../../config";
 
 const ShowBook = () => {
   const [book, setBook] = useState({});
@@ -13,7 +14,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`/api/books/${id}`)
+      .get(`${BACKEND_URL}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

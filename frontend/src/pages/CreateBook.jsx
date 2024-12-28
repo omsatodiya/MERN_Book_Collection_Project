@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useSnackbar } from "notistack";
 import BackButton from "../components/BackButton";
+import { BACKEND_URL } from "../../config";
 
 function CreateBook() {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ function CreateBook() {
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.post("http://localhost:3000/books", {
+      await axios.post(`${BACKEND_URL}/books`, {
         title,
         author,
         publishYear: parseInt(publishYear),
